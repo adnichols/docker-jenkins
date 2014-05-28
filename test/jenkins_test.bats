@@ -24,7 +24,7 @@ EOF
     --volumes-from $data_container --name $BATS_TEST_NAME busybox tar -xC /jenkins
   )
   # launch the container
-  docker run --volumes-from $data_container -d --name $jenkins_container aespinosa/jenkins
+  docker run --volumes-from $data_container -d --name $jenkins_container adnichols/jenkins
 
   ip=`docker inspect -f '{{ .NetworkSettings.IPAddress }}' $jenkins_container`
   url=http://$ip:8080/job/test-job/config.xml

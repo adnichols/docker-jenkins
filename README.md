@@ -1,16 +1,17 @@
 # docker-jenkins
 
-Sets up a container with jenkins installed listening on port 8080.
+Sets up a container with jenkins installed listening on port 8080. This
+fork also includes git.
 
 ## Usage
 
 To run the container, do the following:
 
-    docker run -d -P aespinosa/jenkins
+    docker run -d -P anichols/jenkins
     
     docker ps
     CONTAINER ID        IMAGE                       COMMAND                CREATED             STATUS              PORTS                     NAMES
-    1131d37c38b1        aespinosa/jenkins:latest    java -jar /opt/jenki   12 seconds ago      Up 12 seconds       0.0.0.0:49153->8080/tcp   drunk_fermi
+    1131d37c38b1        anichols/jenkins:latest    java -jar /opt/jenki   12 seconds ago      Up 12 seconds       0.0.0.0:49153->8080/tcp   drunk_fermi
 
 Your jenkins instance is now available by going to http://localhost:49153 .
 
@@ -18,21 +19,22 @@ Your jenkins instance is now available by going to http://localhost:49153 .
 
 To build the image, simply invoke
 
-    docker build github.com/aespinosa/docker-jenkins
+    docker build github.com/adnichols/docker-jenkins
 
 A prebuilt container is also available in the docker index
 
-    docker pull aespinosa/jenkins
+    docker pull anichols/jenkins
 
 
 ## Author
 
-  * Allan Espinosa (<allan.espinosa@outlook.com>)
+  * Aaron Nichols (<anichols@trumped.org>)
+  * Allan Espinosa (<allan.espinosa@outlook.com>) - original author
   * Gwenn Etourneau
 
 ## LICENSE
 
-Copyright 2013 Allan Espinosa
+Copyright 2014 Aaron Nichols
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

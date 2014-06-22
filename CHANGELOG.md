@@ -1,3 +1,10 @@
+## 0.6.0
+  * Upgrade to Jenkins 1.568
+  * Modify container to run Jenkins under CMD instead of ENTRYPOINT to
+    make restarting Jenkins in container work
+## 0.5.0 
+  * Upgrade to Jenkins 1.565
+  * Add Git support
 ## 0.4.0
   * Upgrade to Jenkins 1.551
   * Simplify exposed volume to /jenkins

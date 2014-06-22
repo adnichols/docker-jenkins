@@ -5,10 +5,9 @@ RUN echo deb http://archive.ubuntu.com/ubuntu precise universe >> /etc/apt/sourc
 RUN apt-get update 
 RUN apt-get install -y openjdk-7-jre-headless git
 RUN apt-get clean
-ADD http://mirrors.jenkins-ci.org/war/1.565/jenkins.war /opt/jenkins.war
+ADD http://mirrors.jenkins-ci.org/war/1.568/jenkins.war /opt/jenkins.war
 RUN ln -sf /jenkins /root/.jenkins
 
-ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 EXPOSE 8080
 VOLUME ["/jenkins"]
-CMD [""]
+CMD /usr/bin/java -jar /opt/jenkins.war $JAVA_OPTS
